@@ -8,7 +8,10 @@ public class Navio {
 
         for(int i = 130; i <= 290; i+=40){
         navio.filledSquare(170, i, 19.5);
-        
-    }
+        }
+
+        for(int i = 90; i <=130; i+=40){
+            navio.filledSquare(i, 370, 19.5);
+        }
     }
 }
