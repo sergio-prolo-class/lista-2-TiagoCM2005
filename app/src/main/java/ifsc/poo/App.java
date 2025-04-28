@@ -15,9 +15,13 @@ public class App {
         this.draw.setCanvasSize(LARGURA, ALTURA);
         this.draw.setXscale(0, LARGURA);
         this.draw.setYscale(0, ALTURA);
+        // ===============================================
         Grade tese = new Grade();
         tese.desenhar(draw);
+        //=================================================
 
+        Navio boat = new Navio();
+        boat.desenhar(draw);
     }
 
 
