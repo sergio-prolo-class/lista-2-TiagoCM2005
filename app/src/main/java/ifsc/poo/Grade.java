@@ -23,7 +23,5 @@ public class Grade {
             grade.text(10, j, letra + "");
             letra++;
         }
-
-
     }
 }
