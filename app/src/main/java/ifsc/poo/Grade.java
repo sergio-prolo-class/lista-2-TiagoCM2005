@@ -11,7 +11,19 @@ public class Grade {
             }
         }
 
+        grade.setPenColor(255,0,0);
+        char num = '0';
+        for(int i = 50; i < 450; i+=40){
+            grade.text(i, 10, num + "");
+            num++;
+        }
 
-        grade.text(30, 30, "A");
+        char letra = 'A';
+        for(int j = 50; j < 450; j+=40){
+            grade.text(10, j, letra + "");
+            letra++;
+        }
+
+
     }
 }
