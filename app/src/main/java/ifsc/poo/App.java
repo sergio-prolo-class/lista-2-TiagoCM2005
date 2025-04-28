@@ -15,6 +15,8 @@ public class App {
         this.draw.setCanvasSize(LARGURA, ALTURA);
         this.draw.setXscale(0, LARGURA);
         this.draw.setYscale(0, ALTURA);
+        Grade tese = new Grade();
+        tese.desenhar(draw);
 
     }
 
@@ -22,6 +24,7 @@ public class App {
     public static void main(String[] args) {
         App app = new App();
         app.draw.show();
+        
     }
 }
 
