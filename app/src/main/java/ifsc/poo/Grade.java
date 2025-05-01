@@ -32,7 +32,7 @@ public class Grade {
     }
 
     for(int i = 0; i < linhas; i++){
-        String num = String.valueOf(i + 1);
+        String num = String.valueOf(i);
         double centrox = x + i*celula + celula/2.0;
         grade.text(centrox, y - 15, num);
     }

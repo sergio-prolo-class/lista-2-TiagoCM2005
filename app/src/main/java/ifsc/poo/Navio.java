@@ -11,11 +11,11 @@ public class Navio {
 
     public Navio(Grade grade, int tamanho, int coluna, int linha, boolean vertical) {
         
-        int teste_coluna = coluna -1;
-        int teste_linha = linha - 1;
+        int teste_coluna = coluna;
+        int teste_linha = linha;
         boolean erro = false;
 
-        if(teste_coluna < 1 || teste_coluna > 10 || teste_linha < 1 || teste_linha > 10){
+        if(teste_coluna < 0 || teste_coluna > 10 || teste_linha < 0 || teste_linha > 10){
             System.out.println("Posição fora da grade: coluna ou linha fora de 1-10");
             erro = true;
         }
@@ -26,26 +26,27 @@ public class Navio {
         }
 
         if(vertical && (teste_coluna + tamanho > 10)){
-            System.out.println("Navio ultrapassa o limite da grade!");
+            System.out.println("Navio ultrapassa o limite da grade em x");
             erro = true;
         }
 
         if(!vertical && (teste_linha + tamanho > 10)){
-            System.out.println("Navio ultrapassa o limite da grade!");
+            System.out.println("Navio ultrapassa o limite da grade em y");
             erro = true;
         }
         
         if(erro){
             System.exit(1);
         }
-        
+
         this.grade = grade;
         this.tamanho = tamanho;
         this.coluna = teste_coluna;
         this.linha = teste_linha;
         this.vertical = vertical;
     }
-    
+        
+
     public void desenhar(Draw navio){
         for(int i = 0; i < tamanho; i++){
             int c = coluna;
@@ -61,3 +62,4 @@ public class Navio {
         }
     }
 }
+
