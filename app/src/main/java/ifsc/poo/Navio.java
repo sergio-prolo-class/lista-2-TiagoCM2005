@@ -3,22 +3,61 @@ import edu.princeton.cs.algs4.Draw;
 
 public class Navio {
     
-    private final int CASA = 40;
-    private final int PIXEL = 50;
+    private final int tamanho;
+    private final int coluna;
+    private final int linha;
+    private final boolean vertical;
+    private final Grade grade;
+
+    public Navio(Grade grade, int tamanho, int coluna, int linha, boolean vertical) {
+        
+        int teste_coluna = coluna -1;
+        int teste_linha = linha - 1;
+        boolean erro = false;
+
+        if(teste_coluna < 1 || teste_coluna > 10 || teste_linha < 1 || teste_linha > 10){
+            System.out.println("Posição fora da grade: coluna ou linha fora de 1-10");
+            erro = true;
+        }
+
+        if(tamanho < 1 || tamanho > 10){
+            System.out.println("Tamanho inválido!");
+            erro = true;
+        }
+
+        if(vertical && (teste_coluna + tamanho > 10)){
+            System.out.println("Navio ultrapassa o limite da grade!");
+            erro = true;
+        }
+
+        if(!vertical && (teste_linha + tamanho > 10)){
+            System.out.println("Navio ultrapassa o limite da grade!");
+            erro = true;
+        }
+        
+        if(erro){
+            System.exit(1);
+        }
+        
+        this.grade = grade;
+        this.tamanho = tamanho;
+        this.coluna = teste_coluna;
+        this.linha = teste_linha;
+        this.vertical = vertical;
+    }
     
     public void desenhar(Draw navio){
+        for(int i = 0; i < tamanho; i++){
+            int c = coluna;
+            int l = linha;
+            if(vertical) { // Verifica se é vertical
+                l+= i; // Se sim, avançar sempre na coodernada y
+            } else c+= i; // Caso seja horizontal, avançar a coodernada x
 
-         for(int i = 130; i <= 290; i+=40){
-        navio.filledSquare(170, i, 19.4);
-        }
+            double centrox = grade.getX() + c*grade.getCelula() + grade.getCelula()/2.0;
+            double centroy = grade.getY() + l*grade.getCelula() + grade.getCelula()/2.0;
 
-        for(int i = 90; i <=130; i+=40){
-            navio.filledSquare(i, 370, 19.4);
+            navio.filledSquare(centrox, centroy, grade.getCelula() / 2.0 - 0.6);
         }
- 
-    }
-    public void navio(String orientacao, char simbolo, Double[][] xy ){
-        
-        
     }
 }

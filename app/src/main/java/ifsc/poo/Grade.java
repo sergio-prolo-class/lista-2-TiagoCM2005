@@ -36,6 +36,18 @@ public class Grade {
         double centrox = x + i*celula + celula/2.0;
         grade.text(centrox, y - 15, num);
     }
-
 }
+    
+    public int getX(){
+        return this.x;
+    }
+
+    public int getY(){
+        return this.y;
+    }
+
+    public int getCelula(){
+        return celula;
+    }
+
 }

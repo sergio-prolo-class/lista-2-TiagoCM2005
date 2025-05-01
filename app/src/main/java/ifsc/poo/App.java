@@ -20,8 +20,8 @@ public class App {
         tese.desenhar(draw);
         //=================================================
 
-        //Navio boat = new Navio();
-        //boat.desenhar(draw);
+        Navio boat = new Navio(tese,3,0,3,false);
+        boat.desenhar(draw);
     }
 
 
