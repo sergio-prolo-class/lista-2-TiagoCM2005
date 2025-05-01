@@ -16,12 +16,12 @@ public class App {
         this.draw.setXscale(0, LARGURA);
         this.draw.setYscale(0, ALTURA);
         // ===============================================
-        Grade tese = new Grade();
+        Grade tese = new Grade(50,50);
         tese.desenhar(draw);
         //=================================================
 
-        Navio boat = new Navio();
-        boat.desenhar(draw);
+        //Navio boat = new Navio();
+        //boat.desenhar(draw);
     }
 
 

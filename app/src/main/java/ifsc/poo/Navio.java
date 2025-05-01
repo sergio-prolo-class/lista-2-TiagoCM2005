@@ -9,15 +9,15 @@ public class Navio {
     public void desenhar(Draw navio){
 
          for(int i = 130; i <= 290; i+=40){
-        navio.filledSquare(170, i, 19.5);
+        navio.filledSquare(170, i, 19.4);
         }
 
         for(int i = 90; i <=130; i+=40){
-            navio.filledSquare(i, 370, 19.5);
+            navio.filledSquare(i, 370, 19.4);
         }
  
     }
-    public void navio(String verthori, char simbolo, Double[][] xy ){
+    public void navio(String orientacao, char simbolo, Double[][] xy ){
         
         
     }

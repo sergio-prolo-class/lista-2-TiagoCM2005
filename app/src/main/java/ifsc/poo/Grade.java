@@ -2,26 +2,40 @@ package ifsc.poo;
 import edu.princeton.cs.algs4.Draw;
 
 public class Grade {
+
+    private final int x;
+    private final int y;
+    private final int celula = 40;
+    private final int linhas = 10;
+    private final int colunas = 10;
+
+    public Grade(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
     
     public void desenhar(Draw grade){
         
-        for(int j = 50; j < 450;j+=40){
-            for(int i = 50; i < 450; i+=40){
-                grade.square(i, j, 20);
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                double centrox = x + j*celula + celula/2.0;
+                double centroy = y + i*celula + celula/2.0;
+                grade.square(centrox, centroy, celula/2.0);
             }
-        }
-
-        grade.setPenColor(255,0,0);
-        char num = '0';
-        for(int i = 50; i < 450; i+=40){
-            grade.text(i, 10, num + "");
-            num++;
-        }
-
-        char letra = 'A';
-        for(int j = 50; j < 450; j+=40){
-            grade.text(10, j, letra + "");
-            letra++;
-        }
     }
+
+    grade.setPenColor(255,0,0);
+    for(int i = 0; i < colunas; i++){
+        char letra = (char) ('A' + i);
+        double centroy = y + i*celula + celula/2.0;
+        grade.text(x - 15, centroy, String.valueOf(letra));
+    }
+
+    for(int i = 0; i < linhas; i++){
+        String num = String.valueOf(i + 1);
+        double centrox = x + i*celula + celula/2.0;
+        grade.text(centrox, y - 15, num);
+    }
+
+}
 }
