@@ -45,6 +45,19 @@ public class Navio {
         this.linha = teste_linha;
         this.vertical = vertical;
     }
+
+    public Navio(Grade grade, int tamanho, int coluna, char linha, boolean vertical){
+        this(grade, tamanho, coluna, letraLinha(linha), vertical);
+    }
+
+    private static int letraLinha(char letra){
+        letra = Character.toUpperCase(letra);
+        if(letra < 'A' || letra > 'J'){
+            System.out.println("Letra inválida!");
+            return -1;
+        }
+        return letra - 'A';
+    }
         
 
     public void desenhar(Draw navio){

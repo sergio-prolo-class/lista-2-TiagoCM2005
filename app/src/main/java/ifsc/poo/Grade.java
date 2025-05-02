@@ -15,7 +15,9 @@ public class Grade {
     }
     
     public void desenhar(Draw grade){
-        
+
+        grade.setPenColor(0,0,0);
+
         for (int i = 0; i < linhas; i++) {
             for (int j = 0; j < colunas; j++) {
                 double centrox = x + j*celula + celula/2.0;
