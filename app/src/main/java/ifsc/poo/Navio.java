@@ -68,6 +68,7 @@ public class Navio {
                 l+= i; // Se sim, avançar sempre na coodernada y
             } else c+= i; // Caso seja horizontal, avançar a coodernada x
 
+            // Visto que era necessário utilizar getter, foi criado então na classe Grade para utilizar aqui.
             double centrox = grade.getX() + c*grade.getCelula() + grade.getCelula()/2.0;
             double centroy = grade.getY() + l*grade.getCelula() + grade.getCelula()/2.0;
 

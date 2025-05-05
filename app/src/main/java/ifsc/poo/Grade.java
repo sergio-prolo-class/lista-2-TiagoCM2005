@@ -39,7 +39,7 @@ public class Grade {
         grade.text(centrox, y - 15, num);
     }
 }
-    
+    // Criado getters para a classe Navio.
     public int getX(){
         return this.x;
     }
